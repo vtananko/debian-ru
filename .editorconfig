@@ -1,0 +1,45 @@
+# Корневой файл EditorConfig
+root = true
+
+# Для всех файлов используем unix-совместимые переносы строк
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{py,pgsql,plpg,sql}]
+indent_size = 4
+
+[*.{diff,md}]
+insert_final_newline = false
+trim_trailing_whitespace = false
+
+# Override for Makefile
+[{Makefile, makefile, GNUmakefile}]
+indent_style = tab
+indent_size = 4
+
+[Makefile.*]
+indent_style = tab
+indent_size = 4
+
+[shell]
+indent_style = tab
+indent_size = 4
+
+[*.sh]
+indent_style = tab
+indent_size = 4
+
+# Но не переформатируем минифицированные JS и CSS файлы.
+[*.min.*]
+indent_style = ignore
+trim_trailing_whitespace = false
+insert_final_newline = ignore
+
+[{package.json,.travis.yml}]
+indent_style = space
+indent_size = 2
